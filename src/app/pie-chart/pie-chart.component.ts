@@ -37,7 +37,7 @@ export class PieChartComponent  {
   public pieChartOptions2: ChartOptions = {
     responsive: true,
   };
-  public pieChartLabels2: Label[] = ['0','1','Más a 1'];
+  public pieChartLabels2: Label[] = ['0','1','Más de 1'];
   public pieChartData2: SingleDataSet = [40, 30, 12];
   public pieChartType2: ChartType = 'pie';
   public pieChartLegend2 = true;
