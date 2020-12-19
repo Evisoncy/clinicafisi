@@ -22,14 +22,14 @@ export class PieChartComponent  {
     {
       backgroundColor: 
       [
-        'rgb(51,255,51,0.5)',
-        'rgb(66,134,244,0.5)',
-        'rgb(236,255,49,0.5)',
-        'rgb(224,0,255,0.5)',
-        'rgb(18,142,18,0.5)',
-        'rgb(33,20,185,0.5)',
-        'rgb(255,216,0,0.5)',
-        'rgba(97,18,142,0.5)',
+        'rgb(51,255,51,0.7)',
+        'rgb(66,134,244,0.7)',
+        'rgb(236,255,49,0.7)',
+        'rgb(224,0,255,0.7)',
+        'rgb(18,142,18,0.7)',
+        'rgb(33,20,185,0.7)',
+        'rgb(255,216,0,0.7)',
+        'rgba(97,18,142,0.7)'
       ],
     },
   ];
@@ -42,6 +42,16 @@ export class PieChartComponent  {
   public pieChartType2: ChartType = 'pie';
   public pieChartLegend2 = true;
   public pieChartPlugins2 = [];
+  public pieChartColors2 =[ 
+    {
+      backgroundColor: 
+      [
+        'rgba(255, 60, 51, 0.7)',
+        'rgb(255, 249, 51, 0.7)',
+        'rgb(116, 255, 51, 0.7)'
+      ],
+    },
+  ];
 
   constructor() {
     monkeyPatchChartJsTooltip();
