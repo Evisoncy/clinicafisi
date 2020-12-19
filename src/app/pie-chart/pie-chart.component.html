@@ -1,4 +1,4 @@
-<div class= "micanvas" href="pie-chart.component.css" style="display: block; width:500px; height:350px;">
+<div id= "micanvas" href="pie-chart.component.css">
   <h3>TIPO DE SANGRE</h3>
     <canvas baseChart
       [data]="pieChartData"
@@ -12,8 +12,7 @@
   </div>
 
 
-
-<div class= "micanvas2" href="pie-chart.component.css" style="display: block; width:650px; height:350px;">
+<div id= "micanvas2" href="pie-chart.component.css">
   <h3>USUARIOS CON SEGURO</h3>
     <canvas baseChart
       [data]="pieChartData2"
@@ -21,6 +20,7 @@
       [chartType]="pieChartType2"
       [options]="pieChartOptions2"
       [plugins]="pieChartPlugins2"
-      [legend]="pieChartLegend2">
+      [legend]="pieChartLegend2"
+      [colors]="pieChartColors2">
     </canvas>
 </div>
