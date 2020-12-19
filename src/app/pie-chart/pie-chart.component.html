@@ -1,25 +1,5 @@
-<p>
-  1
-  1
-  1
-  1
-  1
-  1
-  1
-  1
-  1
-  1
-  1
-  1
-  1
-  1
-  1
-  1
-</p>
-
-<h3>TIPO DE SANGRE</h3>
-
-<div style="display: block; width:650px; height:350px;">
+<div class= "micanvas" href="pie-chart.component.css" style="display: block; width:500px; height:350px;">
+  <h3>TIPO DE SANGRE</h3>
     <canvas baseChart
       [data]="pieChartData"
       [labels]="pieChartLabels"
@@ -31,9 +11,10 @@
     </canvas>
   </div>
 
-<h3>USUARIOS CON SEGURO</h3>
 
-<div style="display: block; width:650px; height:350px;">
+
+<div class= "micanvas2" href="pie-chart.component.css" style="display: block; width:650px; height:350px;">
+  <h3>USUARIOS CON SEGURO</h3>
     <canvas baseChart
       [data]="pieChartData2"
       [labels]="pieChartLabels2"
@@ -42,4 +23,4 @@
       [plugins]="pieChartPlugins2"
       [legend]="pieChartLegend2">
     </canvas>
-  </div>
+</div>
