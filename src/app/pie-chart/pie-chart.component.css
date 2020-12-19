@@ -4,8 +4,7 @@
     width:500px; 
     height:200px;
     top:100px;
-    left:260px;
-    
+    left:260px;  
 }
 
 #micanvas2 {
@@ -14,7 +13,23 @@
     width:500px; 
     height:500px;
     top:450px;
-    left:260px;
-   
-    
+    left:260px;   
+}
+
+#micanvas3 {
+    display: inline; 
+    position: absolute;
+    width:500px; 
+    height:200px;
+    top:100px;
+    left:760px;    
+}
+
+#micanvas4 {
+    display: inline; 
+    position: absolute;
+    width:500px; 
+    height:200px;
+    top:450px;
+    left:760px;    
 }
