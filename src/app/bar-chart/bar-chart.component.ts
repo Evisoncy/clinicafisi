@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
-
+var miarray = [22,33,44,55]
 @Component({
   selector: 'app-bar-chart',
   templateUrl: './bar-chart.component.html',
@@ -29,7 +29,7 @@ export class BarChartComponent {
   barChartPlugins = [];
 
   public barChartData: ChartDataSets[] = [
-    { data: [65,23,56,42], label: 'SEGUROS'}
+    { data: [65,23,miarray[2],42], label: 'SEGUROS'}
      
   ];
 
@@ -58,13 +58,13 @@ export class BarChartComponent {
     }
   };
   
-  public barChartLabels2: Label[] = ['2013','2014','20150','2016','2017','2018','2019','2020'];
+  public barChartLabels2: Label[] = ['2013','2014','2015','2016','2017','2018','2019','2020'];
   barChartType2: ChartType = 'bar';
   barChartLegend2 = true;
   barChartPlugins2 = [];
 
   public barChartData2: ChartDataSets[] = [
-    { data: [65,23,56,42,30,15,60,38], label: 'CANTIDADES'}
+    { data: [65,23,56,42,30,15,60,38], label: 'AÑOS'}
      
   ];
 
