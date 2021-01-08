@@ -53,54 +53,6 @@ export class PieChartComponent  {
     },
   ];
   
-  public pieChartOptions3: ChartOptions = {
-    responsive: true,
-  };
-  public pieChartLabels3: Label[] = ['A+','B+','O+','AB+','A-','B-','O-','AB-'];
-  public pieChartData3: SingleDataSet = [30, 50, 10, 20, 15, 45, 25, 35];
-  public pieChartType3: ChartType = 'pie';
-  public pieChartLegend3 = true;
-  public pieChartPlugins3 = [];
-  public pieChartColors3 =[ 
-    {
-      backgroundColor: 
-      [
-        'rgb(51,255,51,0.7)',
-        'rgb(66,134,244,0.7)',
-        'rgb(236,255,49,0.7)',
-        'rgb(224,0,255,0.7)',
-        'rgb(18,142,18,0.7)',
-        'rgb(33,20,185,0.7)',
-        'rgb(255,216,0,0.7)',
-        'rgba(97,18,142,0.7)'
-      ],
-    },
-  ];
-
-  public pieChartOptions4: ChartOptions = {
-    responsive: true,
-  };
-  public pieChartLabels4: Label[] = ['A+','B+','O+','AB+','A-','B-','O-','AB-'];
-  public pieChartData4: SingleDataSet = [30, 50, 10, 20, 15, 45, 25, 35];
-  public pieChartType4: ChartType = 'pie';
-  public pieChartLegend4 = true;
-  public pieChartPlugins4 = [];
-  public pieChartColors4 =[ 
-    {
-      backgroundColor: 
-      [
-        'rgb(51,255,51,0.7)',
-        'rgb(66,134,244,0.7)',
-        'rgb(236,255,49,0.7)',
-        'rgb(224,0,255,0.7)',
-        'rgb(18,142,18,0.7)',
-        'rgb(33,20,185,0.7)',
-        'rgb(255,216,0,0.7)',
-        'rgba(97,18,142,0.7)'
-      ],
-    },
-  ];
-
   constructor() {
     monkeyPatchChartJsTooltip();
     monkeyPatchChartJsLegend();
