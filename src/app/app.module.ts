@@ -24,6 +24,7 @@ import { PermisosComponent } from './permisos/permisos.component';
 import { DiscapacidadesComponent } from './discapacidades/discapacidades.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component'; // <-- import the module
 import { ChartsModule } from 'ng2-charts';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ChartsModule } from 'ng2-charts';
     FilterPipe,
     PermisosComponent,
     DiscapacidadesComponent,
-    PieChartComponent
+    PieChartComponent,
+    BarChartComponent
   ],
   imports: [
     BrowserModule,
