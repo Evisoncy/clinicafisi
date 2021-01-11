@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
-var miarray = [22,33,44,55]
+import { JsonService } from './json.service';
+
 @Component({
   selector: 'app-bar-chart',
   templateUrl: './bar-chart.component.html',
@@ -9,7 +10,7 @@ var miarray = [22,33,44,55]
 })
 
 export class BarChartComponent {
- 
+
   public barChartOptions: ChartOptions = {
     responsive: true,
     scales: {
@@ -29,7 +30,7 @@ export class BarChartComponent {
   barChartPlugins = [];
 
   public barChartData: ChartDataSets[] = [
-    { data: [65,23,miarray[2],42], label: 'SEGUROS'}
+    { data: [65,23,34,42], label: 'CANTIDAD'}
      
   ];
 
@@ -58,13 +59,13 @@ export class BarChartComponent {
     }
   };
   
-  public barChartLabels2: Label[] = ['2013','2014','2015','2016','2017','2018','2019','2020'];
+  public barChartLabels2: Label[] = ['','','',''];
   barChartType2: ChartType = 'bar';
   barChartLegend2 = true;
   barChartPlugins2 = [];
 
   public barChartData2: ChartDataSets[] = [
-    { data: [65,23,56,42,30,15,60,38], label: 'AÑOS'}
+    { data: [0,0,0,0], label: 'CANTIDAD FICHAS'}
      
   ];
 
@@ -84,8 +85,20 @@ export class BarChartComponent {
     },
   ];
 
-  constructor() { }
+  constructor(public json: JsonService) {
 
-  ngOnInit() {
+    this.json.getJson('https://nameless-plains-49486.herokuapp.com/api/charts').subscribe((res: any) => {
+    
+    for(var i = 0; i < res[0].cantidadFichasxAnio.length; i++){ 
+      
+      this.barChartLabels2[i] = (res[0].cantidadFichasxAnio[i]._id).toString()
+      this.barChartData2[0].data[i] = (res[0].cantidadFichasxAnio[i].count).toString()
+    }
+      console.log(res)
+      console.log(res[1].cantidadTiposSangrexAnio[0].anio)
+      console.log(res[1].cantidadTiposSangrexAnio[0].est)
+    });
+   
   }
+  ngOnInit() {}
 }
