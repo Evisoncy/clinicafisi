@@ -63,10 +63,14 @@ export class PieChartComponent  {
 
     this.json.getJson('https://nameless-plains-49486.herokuapp.com/api/charts').subscribe((res: any) => {
     
-        console.log((JSON.parse(res[1].cantidadTiposSangrexAnio[0].est))[0].count)
+        console.log((JSON.parse(res[1].cantidadTiposSangrexAnio[0].est))[1]._id)
         
-        this.pieChartLabels[0] = 'A+'
-        this.pieChartLabels[1] = 'B+'
+
+        if((JSON.parse(res[1].cantidadTiposSangrexAnio[0].est))[0]._id == '5fac9d0d3b441334a01a6293')
+           this.pieChartLabels[0] = 'A+'
+
+        if((JSON.parse(res[1].cantidadTiposSangrexAnio[0].est))[1]._id == '5fac9d0d3b441334a01a6296')
+           this.pieChartLabels[1] = 'B+'
         
         this.pieChartData[0] = (JSON.parse(res[1].cantidadTiposSangrexAnio[0].est))[0].count
         this.pieChartData[1] = (JSON.parse(res[1].cantidadTiposSangrexAnio[0].est))[1].count
