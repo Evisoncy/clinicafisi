@@ -24,13 +24,13 @@ export class BarChartComponent {
     }
   };
   
-  public barChartLabels: Label[] = ['UNMSM','MINSA','ESSALUD','EPS/PRIVADO'];
+  public barChartLabels: Label[] = ['','','',''];
   barChartType: ChartType = 'bar';
   barChartLegend = true;
   barChartPlugins = [];
 
   public barChartData: ChartDataSets[] = [
-    { data: [65,23,34,42], label: 'CANTIDAD'}
+    { data: [0,0,0,0], label: 'CANTIDAD'}
      
   ];
 
@@ -45,7 +45,7 @@ export class BarChartComponent {
       ],
     },
   ];
-
+  
   public barChartOptions2: ChartOptions = {
     responsive: true,
     scales: {
@@ -59,7 +59,7 @@ export class BarChartComponent {
     }
   };
   
-  public barChartLabels2: Label[] = ['','','',''];
+  public barChartLabels2: Label[] = ['','',''];
   barChartType2: ChartType = 'bar';
   barChartLegend2 = true;
   barChartPlugins2 = [];
@@ -84,21 +84,31 @@ export class BarChartComponent {
       ],
     },
   ];
-
+  
   constructor(public json: JsonService) {
 
     this.json.getJson('https://nameless-plains-49486.herokuapp.com/api/charts').subscribe((res: any) => {
     
+      this.barChartLabels[0] = 'UNMSM'
+      this.barChartLabels[1] = 'MINSA'
+      this.barChartLabels[2] = 'ESSALUD'
+      this.barChartLabels[3] = 'EPS'
+      
+      this.barChartData[0].data[0] = res[2].segurosMedicos.UNMSM[0].seguro_UNMSM
+      this.barChartData[0].data[1] = res[2].segurosMedicos.MINSA[0].seguro_MINSA
+      this.barChartData[0].data[2] = res[2].segurosMedicos.ESSALUD[0].seguro_ESSALUD
+      this.barChartData[0].data[3] = res[2].segurosMedicos.EPS[0].seguro_EPS
+
     for(var i = 0; i < res[0].cantidadFichasxAnio.length; i++){ 
       
       this.barChartLabels2[i] = (res[0].cantidadFichasxAnio[i]._id).toString()
-      this.barChartData2[0].data[i] = (res[0].cantidadFichasxAnio[i].count).toString()
+      this.barChartData2[0].data[i] = res[0].cantidadFichasxAnio[i].count
     }
-      console.log(res)
-      console.log(res[1].cantidadTiposSangrexAnio[0].anio)
-      console.log(res[1].cantidadTiposSangrexAnio[0].est)
-    });
-   
+       console.log((JSON.parse(res[1].cantidadTiposSangrexAnio[0].est))[0].count)
+    });  
+    
+    
+    
   }
   ngOnInit() {}
 }
