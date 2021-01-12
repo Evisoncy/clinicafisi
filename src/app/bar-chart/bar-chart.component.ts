@@ -104,7 +104,7 @@ export class BarChartComponent {
       this.barChartLabels2[i] = (res[0].cantidadFichasxAnio[i]._id).toString()
       this.barChartData2[0].data[i] = res[0].cantidadFichasxAnio[i].count
     }
-       console.log((JSON.parse(res[1].cantidadTiposSangrexAnio[0].est))[0].count)
+    
     });  
     
     
