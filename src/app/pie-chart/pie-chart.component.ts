@@ -2,6 +2,7 @@ import { FormatWidth } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ChartType, ChartOptions } from 'chart.js';
 import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
+import { Json2Service } from './json2.service';
 
 @Component({
   selector: 'app-pie-chart',
@@ -13,8 +14,8 @@ export class PieChartComponent  {
   public pieChartOptions: ChartOptions = {
     responsive: true,
   };
-  public pieChartLabels: Label[] = ['A+','B+','O+','AB+','A-','B-','O-','AB-'];
-  public pieChartData: SingleDataSet = [30, 50, 10, 20, 15, 45, 25, 35];
+  public pieChartLabels: Label[] = ['','','','','','','',''];
+  public pieChartData: SingleDataSet = [0, 0, 0, 0, 0, 0, 0, 0];
   public pieChartType: ChartType = 'pie';
   public pieChartLegend = true;
   public pieChartPlugins = [];
@@ -53,9 +54,23 @@ export class PieChartComponent  {
     },
   ];
   
-  constructor() {
+  constructor(public json: Json2Service) {
+
     monkeyPatchChartJsTooltip();
     monkeyPatchChartJsLegend();
+    
+    //['A+','B+','O+','AB+','A-','B-','O-','AB-']
+
+    this.json.getJson('https://nameless-plains-49486.herokuapp.com/api/charts').subscribe((res: any) => {
+    
+        console.log((JSON.parse(res[1].cantidadTiposSangrexAnio[0].est))[0].count)
+        
+        this.pieChartLabels[0] = 'A+'
+        this.pieChartLabels[1] = 'B+'
+        
+        this.pieChartData[0] = (JSON.parse(res[1].cantidadTiposSangrexAnio[0].est))[0].count
+        this.pieChartData[1] = (JSON.parse(res[1].cantidadTiposSangrexAnio[0].est))[1].count
+    });  
   }
 
   ngOnInit() {
