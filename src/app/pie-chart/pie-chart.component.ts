@@ -14,7 +14,7 @@ export class PieChartComponent  {
   public pieChartOptions: ChartOptions = {
     responsive: true,
   };
-  public pieChartLabels: Label[] = ['','','','','','','',''];
+  public pieChartLabels: Label[] = ['','','O+','AB+','A-','B-','O-','AB-'];
   public pieChartData: SingleDataSet = [0, 0, 0, 0, 0, 0, 0, 0];
   public pieChartType: ChartType = 'pie';
   public pieChartLegend = true;
