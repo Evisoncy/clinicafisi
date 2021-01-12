@@ -62,9 +62,6 @@ export class PieChartComponent  {
     //['A+','B+','O+','AB+','A-','B-','O-','AB-']
 
     this.json.getJson('https://nameless-plains-49486.herokuapp.com/api/charts').subscribe((res: any) => {
-    
-        console.log((JSON.parse(res[1].cantidadTiposSangrexAnio[0].est))[1]._id)
-        
 
         if((JSON.parse(res[1].cantidadTiposSangrexAnio[0].est))[0]._id == '5fac9d0d3b441334a01a6293')
            this.pieChartLabels[0] = 'A+'
