@@ -67,13 +67,13 @@ export class PieChartComponent  {
     this.pieChartLabels2[1] = '1'  
     this.pieChartLabels2[2] = 'Más de 1'  
 
-    this.pieChartData2[0] = res[0]
-    this.pieChartData2[1] = res[1]
+    this.pieChartData2[0] = res["0"]
+    this.pieChartData2[1] = res["1"]
     this.pieChartData2[2] = res["Mas de 1"]
     
     console.log(res)
-    console.log(res[0])
-    console.log(res[1])
+    console.log(res["0"])
+    console.log(res["1"])
     console.log(res["Mas de 1"])
     });  
 
