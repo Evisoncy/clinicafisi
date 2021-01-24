@@ -11,6 +11,9 @@
     </canvas>
   </div>
 
+  <button type="button" id="miboton1" class= "btn btn-primary" (click)="exportButtonHandler()">Descargar</button>
+
+
   <div id= "micanvas2" href="bar-chart.component.css" class="dash-widget">
     <h3>FICHAS MÉDICAS POR AÑO</h3>
     <canvas baseChart
@@ -23,3 +26,5 @@
       [colors]="barChartColors2">
     </canvas>
   </div>
+
+  <button type="button" id="miboton2" class= "btn btn-primary" (click)="exportButtonHandler2()">Descargar</button>
