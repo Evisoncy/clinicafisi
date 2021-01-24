@@ -9,7 +9,13 @@
       [legend]="pieChartLegend"
       [colors]="pieChartColors">
     </canvas>
-  </div>
+</div>
+
+<button type="button" id="miboton1" class= "btn btn-primary" (click)="exportButtonHandler()">Descargar Datos</button>
+<button type="button" id= "miboton2" class= "btn btn-primary" (click)="captureScreen()">Descargar Gráfica</button>
+<!-- <a href="#" (click)="downloadCanvas($event)"> DOWNLOAD THIS</a> -->
+ 
+ 
 
 
 <div id= "micanvas2" href="pie-chart.component.css" class="dash-widget"> 
@@ -25,6 +31,5 @@
     </canvas>
 </div>
 
-<div id= "micanvas3" href="pie-chart.component.css">
-
-</div>
+<button type="button" id="miboton3" class= "btn btn-primary" (click)="exportButtonHandler2()">Descargar Datos</button>
+<button type="button" id= "miboton4" class= "btn btn-primary" (click)="captureScreen2()">Descargar Gráfica</button>
