@@ -59,7 +59,7 @@ export class BarChartComponent {
     }
   };
   
-  public barChartLabels2: Label[] = ['','',''];
+  public barChartLabels2: Label[] = ['','','',''];
   barChartType2: ChartType = 'bar';
   barChartLegend2 = true;
   barChartPlugins2 = [];
