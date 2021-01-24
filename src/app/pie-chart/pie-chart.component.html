@@ -11,10 +11,20 @@
     </canvas>
 </div>
 
-<button type="button" id="miboton1" class= "btn btn-primary" (click)="exportButtonHandler()">Descargar Datos</button>
-<button type="button" id= "miboton2" class= "btn btn-primary" (click)="captureScreen()">Descargar Gráfica</button>
+<!-- <button type="button" id="miboton1" class= "btn btn-primary" (click)="exportButtonHandler()">Descargar Datos</button> -->
+<!-- <button type="button" id= "miboton2" class= "btn btn-primary" (click)="captureScreen()">Descargar Gráfica</button> -->
 <!-- <a href="#" (click)="downloadCanvas($event)"> DOWNLOAD THIS</a> -->
- 
+
+<div id= "miboton2" class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Descargar
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <button class="dropdown-item" href="#" (click)="exportButtonHandler()" >Descargar Datos</button>
+    <button class="dropdown-item" href="#" (click)="captureScreen()">Descargar Gráfica</button>
+    <button class="dropdown-item" href="#" (click)="captureScreen()" (click)="exportButtonHandler()" >Descargar Todo</button>
+  </div>
+</div>
  
 
 
@@ -31,5 +41,16 @@
     </canvas>
 </div>
 
-<button type="button" id="miboton3" class= "btn btn-primary" (click)="exportButtonHandler2()">Descargar Datos</button>
-<button type="button" id= "miboton4" class= "btn btn-primary" (click)="captureScreen2()">Descargar Gráfica</button>
+<!-- <button type="button" id="miboton3" class= "btn btn-primary" (click)="exportButtonHandler2()">Descargar Datos</button> -->
+<!-- <button type="button" id= "miboton4" class= "btn btn-primary" (click)="captureScreen2()">Descargar Gráfica</button> -->
+
+<div id= "miboton4" class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Descargar
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <button class="dropdown-item" href="#" (click)="exportButtonHandler2()" >Descargar Datos</button>
+    <button class="dropdown-item" href="#" (click)="captureScreen2()">Descargar Gráfica</button>
+    <button class="dropdown-item" href="#" (click)="captureScreen2()" (click)="exportButtonHandler2()" >Descargar Todo</button>
+  </div>
+</div>
