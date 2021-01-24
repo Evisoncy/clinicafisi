@@ -135,17 +135,17 @@ export class PieChartComponent  {
 
   var data = document.getElementById('micanvas');
   html2canvas(data).then(canvas => {
-  // Few necessary setting options
+  // Opciones de configuración de imagen
     var imgWidth = 208;
     var pageHeight = 295;
     var imgHeight = canvas.height * imgWidth / canvas.width;
     var heightLeft = imgHeight;
  
     const contentDataURL = canvas.toDataURL('image/png')
-    let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF
+    let pdf = new jspdf('p', 'mm', 'a4'); // A4 tamaño del PDF
     var position = 0;
     pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
-    pdf.save('UsuariosTipoDeSangre.pdf'); // Generated PDF
+    pdf.save('UsuariosTipoDeSangre.pdf'); // Generar PDF
     });
   }
   
@@ -158,17 +158,17 @@ export class PieChartComponent  {
 
     var data = document.getElementById('micanvas2');
     html2canvas(data).then(canvas => {
-    // Few necessary setting options
+    
       var imgWidth = 208;
       var pageHeight = 295;
       var imgHeight = canvas.height * imgWidth / canvas.width;
       var heightLeft = imgHeight;
    
       const contentDataURL = canvas.toDataURL('image/png')
-      let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF
+      let pdf = new jspdf('p', 'mm', 'a4'); 
       var position = 0;
       pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
-      pdf.save('UsuariosConSeguro.pdf'); // Generated PDF
+      pdf.save('UsuariosConSeguro.pdf'); 
       });
     }
     
