@@ -131,7 +131,7 @@ export class PieChartComponent  {
     
   }
 
-  public captureScreen(){
+  public generarPDF(){
 
   var data = document.getElementById('micanvas');
   html2canvas(data).then(canvas => {
@@ -149,12 +149,27 @@ export class PieChartComponent  {
     });
   }
   
-  public exportButtonHandler() {
+  public generarExcel() {
     
       this.excelExportService.exportData(this.miData, new IgxExcelExporterOptions("UsuariosTipoDeSangre"));
   }
 
-  public captureScreen2(){
+  generarJPEG() {
+    
+    var data = document.getElementById('micanvas');
+
+    html2canvas(data).then(canvas => {
+      // Opciones de configuración de imagen
+      var link = document.createElement("a");
+      document.body.appendChild(link);
+      link.download = "html_image.jpeg";
+      link.href = canvas.toDataURL("image/jpeg");
+      link.target = '_blank';
+      link.click();
+    });
+  }
+
+  public generarPDF2(){
 
     var data = document.getElementById('micanvas2');
     html2canvas(data).then(canvas => {
@@ -172,9 +187,24 @@ export class PieChartComponent  {
       });
     }
     
-    public exportButtonHandler2() {
+    public generarExcel2() {
       
         this.excelExportService.exportData(this.miData2, new IgxExcelExporterOptions("UsuariosConSeguro"));
+    }
+
+    generarJPEG2() {
+    
+      var data = document.getElementById('micanvas2');
+  
+      html2canvas(data).then(canvas => {
+        // Opciones de configuración de imagen
+        var link = document.createElement("a");
+        document.body.appendChild(link);
+        link.download = "html_image.jpeg";
+        link.href = canvas.toDataURL("image/jpeg");
+        link.target = '_blank';
+        link.click();
+      });
     }
   
 
