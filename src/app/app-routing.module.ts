@@ -14,6 +14,8 @@ import { LoginGuard } from './login/guard/login.guard';
 import { FichaComponent } from './usuarios/ficha/ficha.component';
 import { PermisosComponent } from './permisos/permisos.component';
 import { DiscapacidadesComponent } from './discapacidades/discapacidades.component';
+import { IncidenciaComponent } from './incidencia/incidencia/incidencia.component';
+import { MostrarIncidenciaComponent } from './incidencia/mostrar-incidencia/mostrar-incidencia.component';
 
 const routes: Routes = [
 
@@ -54,6 +56,14 @@ const routes: Routes = [
         {
           path: 'ficha-medica/:dni', 
           component: FichaMedicaComponent
+        },
+        {
+          path: 'incidencia/:dni', 
+          component: IncidenciaComponent,
+        },
+        {
+          path: 'incidencia/:dni/:id', 
+          component: MostrarIncidenciaComponent,
         },
       {
         path: 'estadistica',

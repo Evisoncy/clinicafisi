@@ -26,6 +26,8 @@ import { PieChartComponent } from './pie-chart/pie-chart.component'; // <-- impo
 import { ChartsModule } from 'ng2-charts';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { IgxExcelExporterService } from 'igniteui-angular';
+import { MostrarIncidenciaComponent } from './incidencia/mostrar-incidencia/mostrar-incidencia.component';
+import { IncidenciaComponent } from './incidencia/incidencia/incidencia.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { IgxExcelExporterService } from 'igniteui-angular';
     DiscapacidadesComponent,
     PieChartComponent,
     BarChartComponent,
+    IncidenciaComponent,
+    MostrarIncidenciaComponent,
   ],
   imports: [
     BrowserModule,

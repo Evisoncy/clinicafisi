@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import { FormGroup } from '@angular/forms';
+import { EmailValidator, FormGroup } from '@angular/forms';
 import { HttpHeaders } from '@angular/common/http';
 import { LoginService} from './../../login/service/login.service'
 @Injectable({
@@ -11,8 +11,8 @@ export class ServiceListUsersService {
   httpOptions : any;
   token
 
-  constructor(private service: HttpClient,private Tooken :LoginService) {
-    this.token = this.Tooken.getToken()
+  constructor(private service: HttpClient,private login :LoginService) {
+    this.token = this.login.getToken()
     this.httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
@@ -38,4 +38,14 @@ export class ServiceListUsersService {
   getFicha(id){
     return this.service.get('https://nameless-plains-49486.herokuapp.com/api/medic/'+ id,this.httpOptions)
   }
+  EliminarFicha(dni,id){
+    return this.service.delete('https://nameless-plains-49486.herokuapp.com/api/medic/'+ dni + '/'+ id,this.httpOptions)
+  }
+
+  /*
+  pushIncidencia(forma ){
+    return this.service.post('https://nameless-plains-49486.herokuapp.com/api/incidencia',forma, this.httpOptions)
+  }*/
+
+  
 }
