@@ -162,7 +162,7 @@ export class PieChartComponent  {
       // Opciones de configuración de imagen
       var link = document.createElement("a");
       document.body.appendChild(link);
-      link.download = "html_image.jpeg";
+      link.download = "UsuariosTipoSangre.jpeg";
       link.href = canvas.toDataURL("image/jpeg");
       link.target = '_blank';
       link.click();
@@ -185,7 +185,7 @@ export class PieChartComponent  {
       pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
       pdf.save('UsuariosConSeguro.pdf'); 
       });
-    }
+  }
     
     public generarExcel2() {
       
@@ -200,13 +200,12 @@ export class PieChartComponent  {
         // Opciones de configuración de imagen
         var link = document.createElement("a");
         document.body.appendChild(link);
-        link.download = "html_image.jpeg";
+        link.download = "UsuarioConSeguro.jpeg";
         link.href = canvas.toDataURL("image/jpeg");
         link.target = '_blank';
         link.click();
       });
     }
-  
 
   ngOnInit() {
    
