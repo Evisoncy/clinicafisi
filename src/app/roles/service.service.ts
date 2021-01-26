@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders} from '@angular/common/http';
 import {LoginService} from './../login/service/login.service'
+import { identifierModuleUrl } from '@angular/compiler';
 @Injectable({
   providedIn: 'root'
 })
@@ -48,6 +49,14 @@ export class ServiceService {
    }
    deleteDiscapacidad(valor){
     return this.httpCliente.delete('https://nameless-plains-49486.herokuapp.com/api/discapacidad/'+valor,this.httpOptions)
+   }
+
+   getxIdRoles(valor){
+    return this.httpCliente.get('https://nameless-plains-49486.herokuapp.com/api/rol/'+valor, this.httpOptions)
+   }
+
+   EditRoles(id,valor,desc){
+     return this.httpCliente.put('https://nameless-plains-49486.herokuapp.com/api/rol/'+id,{"_id":id,"name":valor, "description":desc},this.httpOptions)
    }
 
 

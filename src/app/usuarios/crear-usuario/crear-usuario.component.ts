@@ -99,7 +99,7 @@ get telefonoNoValido(){
       telefono: ['', [Validators.required, Validators.minLength(7)]],
       sexo: ['' ],
       rol: [''],
-      discapacidad: ['Ninguna'],
+      discapacidad: [''],
 
     }
 

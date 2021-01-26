@@ -87,6 +87,13 @@ export class DiscapacidadesComponent implements OnInit {
         
       }
       EditadoDiscapacidades(){
+        Swal.fire({
+          icon: 'question',
+          title: '¿Estas seguro de eliminar?',
+          showConfirmButton: true,
+          showCancelButton: true,
+        }).then(resp => {
+          if(resp.value){
        this.service.EditDiscapacidades(this.identificador,this.name).subscribe(
           (data) => {
             console.log(data)
@@ -97,4 +104,6 @@ export class DiscapacidadesComponent implements OnInit {
           }
         )
       }
+    })
+  }
 }

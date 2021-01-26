@@ -178,8 +178,8 @@ export class FichaMedicaComponent implements OnInit {
 
   }
   Redirigir(){
-    let ficha=this.activatedRoute.snapshot.params['dni'];
-    this.router.navigate(['../perfil-usuario',ficha])
+    let dni=this.activatedRoute.snapshot.params['dni'];
+    this.router.navigate(['../perfil-usuario',dni])
   }
 
 }

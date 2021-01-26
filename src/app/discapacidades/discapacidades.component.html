@@ -1,6 +1,6 @@
 <body>
     <div class="main-wrapper">
-    
+
         <div class="page-wrapper">
             <div class="content" *ngIf="DataDiscapacidadesListo">
                 <div class="row">
@@ -12,7 +12,7 @@
                     <div class="col-sm-12">
                         <div class="card-box">
                             <div class="card-block">
-								<div class="table-responsive">
+                                <div class="table-responsive">
                                     <h4>Crear Discapacidad</h4>
                                     <form #f="ngForm" (ngSubmit)="PostDiscapacidades()">
                                         <div class="form-group">
@@ -20,7 +20,7 @@
                                             <button class="btn btn-primary mt-4 float-right" type="submit">Agregar</button>
                                         </div>
                                     </form>
-                                    
+
                                     <!-- 
                                     <div class="">
                                         <input type="checkbox">Gaaddasdas
@@ -28,65 +28,64 @@
                                         <input type="checkbox">Gaaddasdas
                                     </div>
                                     -->
-                                    
+
                                     <div class="col-sm-12">
-                      
+
+                                    </div>
                                 </div>
-								</div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-12">
                         <div class="card-box">
                             <div class="card-block">
-								<div class="table-responsive">
-									<table class="datatable table table-stripped ">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Nombre</th>
-                                            <th>Accion</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr *ngFor="let dato of DataDiscapacidades;let i = index">
-                                            <th>{{i+1}}</th>
-                                            <th>{{dato.name}}</th>
-                                            <th><button type="submit" class="btn btn-danger" (click)="DeleteDiscapacidades(dato._id)">Eliminar</button>
-                                            <button  type="button"  (click)="EditarDiscapacidades(dato._id)" class="btn btn-success ml-2 mr-2"  data-toggle="modal" data-target="#exampleModal"
-                                                 >Editar</button></th>
-                                        </tr>
-                                    </tbody>
-                                </table>
-								</div>
+                                <div class="table-responsive">
+                                    <table class="datatable table table-stripped ">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nombre</th>
+                                                <th>Accion</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let dato of DataDiscapacidades;let i = index">
+                                                <th>{{i+1}}</th>
+                                                <th>{{dato.name}}</th>
+                                                <th><button type="submit" class="btn btn-danger" (click)="DeleteDiscapacidades(dato._id)">Eliminar</button>
+                                                    <button type="button" (click)="EditarDiscapacidades(dato._id)" class="btn btn-success ml-2 mr-2" data-toggle="modal" data-target="#exampleModal">Editar</button></th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
-                    </div>
-                    <div class="modal-body">
-                        <form #f="ngForm" (ngSubmit)="onSubmit()" >
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Discaacidad:</label>
-                            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="name" name="discapacidad">
+                            </div>
+                            <div class="modal-body">
+                                <form #f="ngForm">
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Discapacidad:</label>
+                                        <input type="text" class="form-control" id="recipient-name" [(ngModel)]="name" name="discapacidad">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary" (click)="EditadoDiscapacidades()">Editar</button>
+                            </div>
                         </div>
-                        </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" (click)="EditadoDiscapacidades()">Editar</button>
-                    </div>
-                    </div>
-                </div>
                 </div>
 
 

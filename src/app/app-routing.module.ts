@@ -25,70 +25,81 @@ const routes: Routes = [
   },
   {
     path: '',
+    redirectTo: '/login',
+    pathMatch: 'full',  
+  },
+  {
+    path: '',
     component: NavVerticalComponent,
-    //canActivateChild:[LoginGuard],
+    canActivate:[LoginGuard],
     children: [
       {
-        path: '',
-        redirectTo: '/login',
-        pathMatch: 'full',  
-      },
-      {
         path: 'inicio',
-        component: InicioComponent
+        component: InicioComponent, 
       },
       {
         path: 'usuarios',
-        component: UsuariosComponent
+        component: UsuariosComponent, 
       },
         {
           path: 'crear-usuario',
-          component: CrearUsuarioComponent
+          component: CrearUsuarioComponent, 
         },
         {
           path: 'perfil-usuario/:dni', 
-          component: PerfilUsuarioComponent
+          component: PerfilUsuarioComponent, 
         },
         {
-          path: 'perfil-usuario/:dni/:id', 
-          component: FichaComponent
+          path: 'perfil-usuario/:dni/:id',
+          component: FichaComponent, 
+        },
+        {
+          path: 'incidencia/:dni',
+          component: IncidenciaComponent, 
+        },
+        {
+          path: 'incidencia/:dni/:id',
+          component: MostrarIncidenciaComponent, 
         },
         {
           path: 'ficha-medica/:dni', 
-          component: FichaMedicaComponent
-        },
-        {
-          path: 'incidencia/:dni', 
-          component: IncidenciaComponent,
-        },
-        {
-          path: 'incidencia/:dni/:id', 
-          component: MostrarIncidenciaComponent,
+          component: FichaMedicaComponent, 
         },
       {
         path: 'estadistica',
-        component: EstadisticaComponent
+        component: EstadisticaComponent, 
       },
       {
         path: 'roles',
-        component: RolesComponent
+        component: RolesComponent, 
       },
       {
         path: 'permisos',
-        component: PermisosComponent
+        component: PermisosComponent, 
       },
       {
         path: 'discapacidades',
-        component: DiscapacidadesComponent
+        component: DiscapacidadesComponent, 
       },
+   
       
-    ]
+      
+    ],
+    
+    //canActivate:[LoginGuard],
   },
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full',  
+  },
+  
 
   {
     path: '**',
     component: NotFoundComponent
   },
+  
  
 ];
 

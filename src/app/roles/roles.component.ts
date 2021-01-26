@@ -11,7 +11,9 @@ export class RolesComponent implements OnInit {
   DataRoles
   DataRolesListo = false
   DataPermisos
-
+  name
+  id
+  desc
   nombre
   descripcion
   constructor(private service : ServiceService ) { }
@@ -26,7 +28,7 @@ getDataRoles(){
 
   this.service.getRoles().subscribe(
     (data) => {
-      console.log(data)
+      //console.log(data)
       this.DataRoles=data['rols']
       this.DataRolesListo = true
     }
@@ -75,27 +77,42 @@ DeleteRoles(id){
 
 EditarRoles(id){
   console.log(id) //mostrando lo que enviare
-  Swal.fire({
-    icon: 'question',
-    title: '¿Estas seguro de eliminar?',
-    showConfirmButton: true,
-    showCancelButton: true,
-  }).then(resp => {
-    if(resp.value){
-      this.service.deleteRoles(id).subscribe(
+     this.service.getxIdRoles(id).subscribe(
         (data) => {
-          console.log("eliminado")
-          this.getDataRoles()
+          console.log(data);
+          this.name = data['foundRol'].name
+         this.id = data['foundRol']._id
+         this.desc = data['foundRol'].description
         },
         (error) => {
           console.log(error)
         }
       )
-    }
-
-  })
+}
+EditadoRoles(){
   
+  Swal.fire({
+    icon: 'question',
+    title: '¿Estas seguro de editar?',
+    showConfirmButton: true,
+    showCancelButton: true,
+  }).then(resp => {
+    if(resp.value){
+      
+  this.service.EditRoles(this.id,this.name,this.desc).subscribe(
+    (data) => {
+      console.log(data)
+      window.location.reload();
+    },
+    (error) => {
+      console.log(error)
+    }
+  )
 
 }
+  })
 
+
+
+}
 }
